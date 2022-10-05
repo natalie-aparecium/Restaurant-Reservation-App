@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { listReservations } from "../utils/api";
+import { listReservations, listTables, finishTable } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
 import { useHistory } from "react-router";
 import useQuery from "../utils/useQuery";
 import { previous, today, next } from "../utils/date-time";
 import ReservationList from "./ReservationList";
+import TableList from "./TableList";
 
 /**
  * Defines the dashboard page.
@@ -15,11 +16,13 @@ import ReservationList from "./ReservationList";
 function Dashboard({ forceRerender, setForceRerender }) {
 
   const query = useQuery();
-  //const history = useHistory();
+  const history = useHistory();
 
   const [date, setDate] = useState(query.get("date") || today());
   const [reservations, setReservations] = useState([]);
   const [reservationsError, setReservationsError] = useState(null);
+  const [tables, setTables] = useState([]);
+  const [tablesError, setTablesError] = useState(null);
 
   useEffect(loadDashboard, [date]);
 
@@ -29,12 +32,35 @@ function Dashboard({ forceRerender, setForceRerender }) {
     listReservations({ date }, abortController.signal)
       .then(setReservations)
       .catch(setReservationsError);
+    listTables(abortController.signal)
+      .then(setTables)
+      .catch(setTablesError);
     return () => abortController.abort();
-  }
+  };
 
   const handleChange = ({ target }) => {
     setDate(target.value);
   };
+
+  const handleFinish = (table_id) => {
+    const userResponse = window.confirm(
+      "Ready to seat new guests? This cannot be undone."
+    );
+
+    if (userResponse) {
+      const abortController = new AbortController();
+      finishTable(table_id, abortController.signal)
+        .then(() => {
+          listTables();
+          history.push("/");
+          setForceRerender(!forceRerender);
+        })
+        .catch(setTablesError);
+      return () => abortController.abort();
+    };
+  };
+
+
 
   return (
     <main>
@@ -65,6 +91,15 @@ function Dashboard({ forceRerender, setForceRerender }) {
         ))}
       </div>
       <br />
+      <ErrorAlert error={tablesError} />
+      <div>
+        <div className="d-md-flex mb-3 d-flex justify-content-center">
+          {tables.length ? <h5 className="text-info">Tables</h5> : `There are no tables.`}
+        </div>
+        {tables.map((table) => (
+          <TableList key={table.table_id} table={table} handleFinish={handleFinish}/>
+        ))}
+      </div>
     </main>
   );
 }
