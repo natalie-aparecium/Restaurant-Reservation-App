@@ -69,7 +69,7 @@ function EditReservation({ forceRerender, setForceRerender }) {
     
     return (
         <div>
-          <h2>Edit Reservation {reservation_id}</h2>
+          <h2 className="p-3 mb-3 bg-dark text-light">Edit Reservation {reservation_id}</h2>
           <ErrorAlert error={error} />
           <ReservationForm 
             handleSubmit={handleSubmit} 
