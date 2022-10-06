@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Redirect, Route, Switch } from "react-router-dom";
 import Dashboard from "../dashboard/Dashboard";
 import NotFound from "./NotFound";
-import { today } from "../utils/date-time";
 import CreateReservation from "../reservations/CreateReservation";
 import SeatReservation from "../reservations/SeatReservation";
 import CreateTable from "../tables/CreateTable";
+import Search from "../search/Search";
+import EditReservation from "../reservations/EditReservation";
 
 /**
  * Defines all the routes for the application.
@@ -16,6 +17,8 @@ import CreateTable from "../tables/CreateTable";
  * @returns {JSX.Element}
  */
 function Routes() {
+  const [forceRerender, setForceRerender] = useState(false);
+
   return (
     <Switch>
       <Route exact={true} path="/">
@@ -30,11 +33,17 @@ function Routes() {
       <Route exact={true} path="/reservations/:reservation_id/seat">
         <SeatReservation />
       </Route>
+      <Route exact= {true} path="/reservations/:reservation_id/edit">
+        <EditReservation forceRerender={forceRerender} setForceRerender={setForceRerender} />
+      </Route>
       <Route exact-={true} path="/tables/new">
         <CreateTable />
       </Route>
       <Route path="/dashboard">
-        <Dashboard date={today()} />
+        <Dashboard forceRerender={forceRerender} setForceRerender={setForceRerender} />
+      </Route>
+      <Route path="/search">
+        <Search />
       </Route>
       <Route>
         <NotFound />

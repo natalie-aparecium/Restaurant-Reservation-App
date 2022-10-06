@@ -40,7 +40,7 @@ function CreateTable() {
 
     return (
         <div>
-          <h2 className="text-center text-info my-4">Create New Table</h2>
+          <h2 className="p-3 mb-3 bg-dark text-light d-flex justify-content-center">Create New Table</h2>
           <ErrorAlert error={error} />
           <div>
             <form onSubmit={handleSubmit} className="col-auto">
@@ -70,8 +70,8 @@ function CreateTable() {
               />
               <br />
               <div className="text-center">
-                <button type="button" className="btn btn-outline-secondary mb-4 mx-2" onClick={cancelHandler}>Cancel</button>
-                <button type="submit" className="btn btn-outline-info mb-4 mx-2">Submit</button> 
+                <button type="button" className="btn btn-outline-danger mb-4 mx-2" onClick={cancelHandler}>Cancel</button>
+                <button type="submit" className="btn btn-outline-primary mb-4 mx-2">Submit</button> 
               </div>
             </form>
           </div>

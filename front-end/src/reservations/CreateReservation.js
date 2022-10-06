@@ -49,7 +49,7 @@ function CreateReservation() {
   
     return (
       <div>
-        <h2 className="text-info text-center flex-row my-4">Create New Reservation</h2>
+        <h2 className="p-3 mb-3 bg-dark text-light d-flex justify-content-center">Create New Reservation</h2>
         <ErrorAlert error={error} />
         <ReservationForm 
           handleSubmit={handleSubmit} 

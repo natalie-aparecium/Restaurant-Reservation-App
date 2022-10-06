@@ -64,7 +64,8 @@ function Dashboard({ forceRerender, setForceRerender }) {
 
   return (
     <main>
-      <h1>Dashboard</h1>
+      <h1 class="p-3 mb-3 bg-dark text-light d-flex justify-content-center">Dashboard</h1>
+      <br/>
       <div className="d-flex justify-content-center">
         <button type="button" className="btn btn-outline-dark" onClick={() => setDate(previous(date))}>Previous</button>
         <button type="button" className="btn btn-outline-dark mx-2" onClick={() => setDate(today())}>Today</button>
@@ -84,7 +85,7 @@ function Dashboard({ forceRerender, setForceRerender }) {
       <ErrorAlert error={reservationsError} />
       <div>
         <div className="d-md-flex mb-3 d-flex justify-content-center">
-          {reservations.length ? <h5 className="text-info">Reservations</h5> : `There are no reservations for ${date}.`}
+          {reservations.length ? <h5 className="text-secondary border-bottom border-dark">Reservations</h5> : `There are no reservations for ${date}.`}
         </div>
         {reservations.map((reservation) => (
           <ReservationList key={reservation.reservation_id} reservation={reservation} />
@@ -94,7 +95,7 @@ function Dashboard({ forceRerender, setForceRerender }) {
       <ErrorAlert error={tablesError} />
       <div>
         <div className="d-md-flex mb-3 d-flex justify-content-center">
-          {tables.length ? <h5 className="text-info">Tables</h5> : `There are no tables.`}
+          {tables.length ? <h5 className="text-secondary border-bottom border-dark">Tables</h5> : `There are no tables.`}
         </div>
         {tables.map((table) => (
           <TableList key={table.table_id} table={table} handleFinish={handleFinish}/>
