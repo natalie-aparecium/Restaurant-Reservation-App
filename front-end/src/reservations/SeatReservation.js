@@ -61,8 +61,8 @@ function SeatReservation() {
 
   return (
     <div>
-      <h1 className="p-3 mb-3 bg-dark text-light d-flex justify-content-center">Seat Reservation: {reservation_id}</h1>
-      <h5 className="text-secondary text-center">Choose a table for the reservation:</h5>
+      <h1 className="text-info text-center">Seat Reservation: {reservation_id}</h1>
+      <h5 className="text-muted text-center">Choose a table for the reservation:</h5>
       <ErrorAlert error={error} />
       <form onSubmit={handleSubmit}>
         <label htmlFor="table_id" className="d-flex justify-content-center">
