@@ -14,11 +14,11 @@ This is a full stack project for Thinful's engineering program. The application 
 This application was developed using user stories given by a figurative manager. The user stories are briefly explained next with attached screenshots:
 - The Dashboard view is the home page view of the application and displays the restaurant reservations for the current day, but the user can also search for a certain date or use the previous or next buttons to iterate through the days. The tables will also be displayed on the dashboard.
 
-*Current Date*
+*Dashboard with Current Date*
 
 ![image](https://user-images.githubusercontent.com/78841093/195773845-83a3368c-5c44-4208-809a-a8112453fbf9.png)
 
-*Specific date*
+*Dashboard with Specific date*
 
 ![image](https://user-images.githubusercontent.com/78841093/195773482-5f61e1b1-3e77-43a1-b635-71909ccf439f.png)
 
