@@ -71,7 +71,7 @@ API Url: https://reserve-system-back.herokuapp.com/
 - PostgreSQL
 - Heroku
 - JavaScript
-- 
+
 ## Installation
 
 1. Fork and clone this repository.
