@@ -13,16 +13,27 @@ This is a full stack project for Thinful's engineering program. The application 
 
 This application was developed using user stories given by a figurative manager. The user stories are briefly explained next with attached screenshots:
 - The Dashboard view is the home page view of the application and displays the restaurant reservations for the current day, but the user can also search for a certain date or use the previous or next buttons to iterate through the days. The tables will also be displayed on the dashboard.
+
 *Current Date*
+
 ![image](https://user-images.githubusercontent.com/78841093/195773845-83a3368c-5c44-4208-809a-a8112453fbf9.png)
+
 *Specific date*
+
 ![image](https://user-images.githubusercontent.com/78841093/195773482-5f61e1b1-3e77-43a1-b635-71909ccf439f.png)
+
 - Search for a reservation given a customer phone number
+
 ![image](https://user-images.githubusercontent.com/78841093/195774008-05d2ac5a-f62c-4bb8-8905-e0f85a2725c8.png)
+
 - Create a new reservation with new details ( a validation error is shown for non buisness hours)
+
 ![image](https://user-images.githubusercontent.com/78841093/195774178-420e20fe-64c9-47d1-b24a-e936f059a310.png)
+
 - Instances of tables can be created and assigned to parties as they arrive with their reservations
+
 ![image](https://user-images.githubusercontent.com/78841093/195775593-aee91785-9198-4086-b92a-df3975a8ae74.png)
+
 ![image](https://user-images.githubusercontent.com/78841093/195775694-448a67a0-92d9-42c9-8266-a629efb41bfc.png)
 
 ## API Documentation
