@@ -46,7 +46,6 @@ function hasRequiredFields(req, res, next) {
     return next({ status: 400, message: `people is not a valid number.`});
   };
 
-  res.locals.reservation = req.body.data;
   next();
 };
 
@@ -70,7 +69,7 @@ function validDate(req, res, next) {
 
 // verifies that the reservation time is during operating hours
 function duringBusinessHours(req, res, next) {
-  const { reservation_time } = res.locals.reservation;
+  const { reservation_time } = req.body.data;
   const time = Number(reservation_time.replace(":", ""));
     
   if (time < 1030) {
