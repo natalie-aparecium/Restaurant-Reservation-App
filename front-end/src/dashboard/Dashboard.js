@@ -64,7 +64,7 @@ function Dashboard({ forceRerender, setForceRerender }) {
 
   return (
     <main>
-      <h1 class="p-3 mb-3 bg-dark text-light d-flex justify-content-center">Dashboard</h1>
+      <h1 className="p-3 mb-3 bg-dark text-light d-flex justify-content-center">Dashboard</h1>
       <br/>
       <div className="d-flex justify-content-center">
         <button type="button" className="btn btn-outline-dark" onClick={() => setDate(previous(date))}>Previous</button>

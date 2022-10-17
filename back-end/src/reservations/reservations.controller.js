@@ -52,7 +52,7 @@ function hasRequiredFields(req, res, next) {
 
 // checks that the reservation date is in the future and not on a Tuesday
 function validDate(req, res, next) {
-  const { reservation_date, reservation_time } = res.locals.reservation;
+  const { reservation_date, reservation_time } = req.body.data;
 
   const reserveDate = new Date(reservation_date + "T" + reservation_time);
   const today = new Date();
