@@ -39,9 +39,9 @@ function ReservationList({ reservation }) {
           </p>
           {reservation.status === "booked" &&
             <>
-              <Link className="btn btn-outline-info" to={`/reservations/${reservation.reservation_id}/seat`}>
+              <a className="btn btn-outline-info" href={`/reservations/${reservation.reservation_id}/seat`}>
                 Seat
-              </Link>
+              </a>
               <Link className="btn btn-outline-warning mx-2" to={`/reservations/${reservation.reservation_id}/edit`}>
                 Edit
               </Link>

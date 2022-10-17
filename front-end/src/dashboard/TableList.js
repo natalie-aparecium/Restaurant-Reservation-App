@@ -23,7 +23,6 @@ function TableList({ table, handleFinish }) {
                 >
                   Finish
                 </button>
-                <button className="btn btn-outline-secondary" >Cancel</button>
               </>
             }
           </div>

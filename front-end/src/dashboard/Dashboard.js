@@ -44,7 +44,7 @@ function Dashboard({ forceRerender, setForceRerender }) {
 
   const handleFinish = (table_id) => {
     const userResponse = window.confirm(
-      "Ready to seat new guests? This cannot be undone."
+      "Is this table ready to seat new guests?"
     );
 
     if (userResponse) {
