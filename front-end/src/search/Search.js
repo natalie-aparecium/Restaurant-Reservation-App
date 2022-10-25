@@ -64,7 +64,7 @@ function Search() {
               <button type="submit" className="btn btn-outline-primary mb-4 mx-2">Find</button>
             </div>
             <br />
-            {reservations.length ? <h5 class="text-secondary border-bottom border-dark">Reservations Found</h5> : <p>No reservations found</p>}
+            {reservations.length ? <h5 className="text-secondary border-bottom border-dark">Reservations Found</h5> : <p>No reservations found</p>}
             {reservations && reservations.map((reservation) => (
               <ReservationList key={reservation.reservation_id} reservation={reservation} />
             ))}
